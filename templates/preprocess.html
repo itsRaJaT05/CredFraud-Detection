@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preprocess Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Preprocess Data</h1>
+        <div class="row">
+            <div class="col">
+                <h3>Data Summary</h3>
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+                <p>Fraud Count: {{ fraud_count }}</p>
+                <p>Not Fraud Count: {{ not_fraud_count }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <a href="{{ url_for('upload') }}" class="btn btn-primary">Upload Another File</a>
+                <a href="{{ url_for('predict') }}" class="btn btn-success float-right">Predict</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

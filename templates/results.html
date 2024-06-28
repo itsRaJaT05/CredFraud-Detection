@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Results</h1>
+        <div class="row">
+            <div class="col">
+                <h3>Model Evaluation</h3>
+                <p>Accuracy: {{ accuracy }}</p>
+                <p>F1 Score: {{ f1 }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <a href="{{ url_for('upload') }}" class="btn btn-primary">Upload Another File</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
